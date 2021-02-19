@@ -1,21 +1,15 @@
 import React from "react";
 
-// const Favorites = () => {
-//     (characters.map((item, index) => {
-//           return (
-//             <li key={index} className="list-group-item">
-//               {item.like}
-//             </li>
-//     )
-// }
-
 const Like = () => {
+	// const isFavorites = store.favorites.find(props.name)
 	return (
 		<a type="button" className="card-link">
-			{/* onClick={() => {Like(item.like)}} */}
+			{/* onClick={() => actions.Favorites(props.name)} */}
 			<i className="fa fa-heart" />
 		</a>
 	);
 };
 
 export default Like;
+
+// {isFavorites ? <i className="fas fa-heart" /> : <i className="far fa-heart" /> }

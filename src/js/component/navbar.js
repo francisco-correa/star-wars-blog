@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Favorites from "../component/favorites";
 
 export const Navbar = () => {
 	return (
@@ -9,12 +10,7 @@ export const Navbar = () => {
 					<img src="/starwarslogo.png" alt="Star Wars" style={{ width: "45px", height: "40px" }} />
 				</a>
 			</Link>
-			{/* <span className="navbar-brand mb-0 h1">React Boilerplate</span> */}
-			<div className="ml-auto">
-				<Link to="/demo">
-					<button className="btn btn-primary">Favorites</button>
-				</Link>
-			</div>
+			<Favorites />
 		</nav>
 	);
 };

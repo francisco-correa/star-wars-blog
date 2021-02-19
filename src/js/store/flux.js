@@ -1,8 +1,11 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			persons: [{}],
+			characters: [],
+			characters_id: [],
 			planets: [{}],
+			planets_id: [{}],
+			favorites: [{}],
 			demo: [
 				{
 					title: "FIRST",
@@ -28,7 +31,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const json = await response.json();
 				console.log(json, "<--JSON Characters");
 
-				setStore({ persons: json.results });
+				setStore({ characters: json.results });
+			},
+			getCharactersApi_id: async () => {
+				const settings = {
+					method: "GET",
+					headers: {
+						"Content-Type": "application/json"
+					}
+				};
+				const url = "https://www.swapi.tech/api/people/1";
+				const response = await fetch(url, settings);
+				const json = await response.json();
+				console.log(json, "<--JSON Characters_properties");
+
+				setStore({ characters_id: json.result.properties });
 			},
 			getPlanetsApi: async () => {
 				const settings = {
@@ -42,6 +59,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 				console.log(json, "<--JSON Planets");
 
 				setStore({ planets: json.results });
+			},
+			getPlanetsApi_id: async () => {
+				const settings = {
+					method: "GET",
+					headers: {
+						"Content-Type": "application/json"
+					}
+				};
+				const url = "https://www.swapi.tech/api/planets/1";
+				const response = await fetch(url, settings);
+				const json = await response.json();
+				console.log(json, "<--JSON Planets_properties");
+
+				setStore({ planets_id: json.result.properties });
 			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
