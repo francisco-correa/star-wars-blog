@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../../js/store/appContext";
 
-const Favorites = () => {
+const Favorites = p => {
+	const { store, actions } = useContext(Context);
+
 	return (
 		<div className="navbar mb-2">
 			<div className="dropdown dropdown">
@@ -12,9 +15,17 @@ const Favorites = () => {
 					aria-haspopup="true"
 					data-toggle="dropdown"
 					aria-expanded="false">
-					Favorites
-					{/* {store.favorites.length} + `Favorites`} */}
+					<span className="badge badge-primary">{`Favorites ${store.favorites.length}`}</span>
 				</button>
+				<li>
+					<button
+						type="button"
+						onClick={() => {
+							actions.removeFavorites(p.name);
+						}}>
+						<i className="fa fa-trash" style={{ color: "black" }} />
+					</button>
+				</li>
 				<div className="dropdown-menu" aria-labelledby="dropdownMenuButton" />
 			</div>
 		</div>

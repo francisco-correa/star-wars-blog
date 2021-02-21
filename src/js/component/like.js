@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../../js/store/appContext";
 
-const Like = () => {
-	// const isFavorites = store.favorites.find(props.name)
+const Like = p => {
+	const { store, actions } = useContext(Context);
+
 	return (
-		<a type="button" className="card-link">
-			{/* onClick={() => actions.Favorites(props.name)} */}
+		<a
+			type="button"
+			onClick={() => {
+				actions.addFavorites(p.name);
+			}}
+			className="btn btn-danger"
+			style={{ width: "50px", marginLeft: "40px" }}>
 			<i className="fa fa-heart" />
 		</a>
 	);
