@@ -17,21 +17,12 @@ export const Home = () => {
 			<h2 className="characters" style={{ color: "red" }}>
 				Characters
 			</h2>
-			<div className="row overflow-auto">
-				<div className="scrolling-wrapper">
-					<ListCharacters />
-				</div>
-			</div>
+			<ListCharacters />
 			<br />
-
 			<h2 className="planets" style={{ color: "red" }}>
 				Planets
 			</h2>
-			<div className="row overflow-auto">
-				<div className="scrolling-wrapper">
-					<ListPlanets />
-				</div>
-			</div>
+			<ListPlanets />
 		</div>
 	);
 };

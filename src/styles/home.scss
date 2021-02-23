@@ -1,16 +1,23 @@
-.scrolling-wrapper {
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  display: inline-block;
-}
+// .scrolling-wrapper {
+//   overflow-x: scroll;
+//   overflow-y: hidden;
+//   white-space: nowrap;
+// }
 
+// .card {
+//   display: inline-block;
+// }
+
+button.btn.btn-danger {
+  margin-left: 30px;
+}
 
 body {
     background-image: url("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/milky-way-over-the-sky-view-from-the-southern-royalty-free-image-1594935629.jpg");
     background-repeat: repeat
   }
 
-td, th, p, h2, h4 {
+
+td, th, p, h1, h2, h4 {
     color: red;
 }

@@ -32,6 +32,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				setStore({ characters: data.results });
 			},
+
 			getPlanetsApi: async () => {
 				const settings = {
 					method: "GET",
@@ -53,12 +54,32 @@ const getState = ({ getStore, getActions, setStore }) => {
 				console.log(store.favorites);
 			},
 
+			// addFavorites: name => {
+			// 	const newStore = getStore();
+			// 	let item = newStore.favorites.find(value => value == name); //
+			// 	if (item != name) {
+			// 		let updatedFavorites = newStore.favorites.concat(name);
+			// 		setStore({ favorites: updatedFavorites });
+			// 	}
+			// },
+
 			removeFavorites: item => {
+				console.log(item);
 				const store = getStore();
-				const removeName = store.favorites.filter((item, index) => index !== index);
+				const removeName = store.favorites.filter(name => name !== item);
 				setStore({ favorites: removeName });
 				console.log(store.favorites);
 			},
+
+			// removeFavorites: fav => {
+			// 	setStore({
+			// 		favorites: getStore().favorites.filter(function(item, index) {
+			// 			if (fav.id !== item.id) {
+			// 				return item;
+			// 			}
+			// 		})
+			// 	});
+			// },
 
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
