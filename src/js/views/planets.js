@@ -8,17 +8,20 @@ export const Planets = () => {
 	const [data, setData] = useState(null);
 	const { id } = useParams();
 
-	useEffect(
-		async () => {
-			const response = await fetch(`https://swapi.dev/api/planets/${id}/`);
-			const json = await response.json();
-			const data = json;
-			console.log(data, "<--JSON Planets");
+	useEffect(() => {
+		async function fetchData() {
+			try {
+				const response = await fetch(`https://swapi.dev/api/planets/${id}/`);
+				const json = await response.json();
+				const data = json;
+				setData(data);
+			} catch (e) {
+				console.error(e);
+			}
+		}
+		fetchData();
+	}, []);
 
-			setData(data);
-		},
-		[id]
-	);
 	// return <pre>{JSON.stringify(data)}</pre>;
 	if (!data) return null;
 

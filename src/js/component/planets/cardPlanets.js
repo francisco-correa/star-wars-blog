@@ -17,34 +17,36 @@ const CardPlanets = ({ url, name, diameter, climate, terrain }) => {
 
 	return (
 		<div className="col-3">
-			<div className="card">
-				{/* <p>{JSON.stringify(store.planets)}</p> */}
-				<img
-					src="https://static.wikia.nocookie.net/esstarwars/images/e/e6/MosEisley-celebration.png/revision/latest?cb=20140805192904"
-					className="card-img-top"
-					alt="Tattoine"
-				/>
-				<div className="card-body">
-					<h4 className="card-title" style={{ color: "red" }}>
-						{name}
-					</h4>
-					<ul className="list-group list-group-flush">
-						<li className="list-group-item">
-							<strong>Diameter: </strong> {diameter}
-						</li>
-						<li className="list-group-item">
-							<strong>Climate: </strong> {climate}
-						</li>
-						<li className="list-group-item">
-							<strong>Terrain: </strong>
-							{terrain}
-						</li>
-					</ul>
-					<br />
-					<Link to={`/planets/${id}`}>
-						<button className="btn btn-primary">Learn More !</button>
-					</Link>
-					<Like name={name} />
+			<div className="card-group">
+				<div className="card bg-light border-light mb-3">
+					<img
+						src="https://static.wikia.nocookie.net/esstarwars/images/e/e6/MosEisley-celebration.png/revision/latest?cb=20140805192904"
+						className="card-img-top"
+						style={{ height: "130px" }}
+						alt="Tattoine"
+					/>
+					<div className="card-body">
+						<h4 className="card-title" style={{ color: "red" }}>
+							{name}
+						</h4>
+						<ul className="list-group list-group-flush">
+							<li className="list-group-item">
+								<strong>Diameter: </strong> {diameter}
+							</li>
+							<li className="list-group-item">
+								<strong>Climate: </strong> {climate}
+							</li>
+							<li className="list-group-item">
+								<strong>Terrain: </strong>
+								{terrain}
+							</li>
+						</ul>
+						<br />
+						<Link to={`/planets/${id}`}>
+							<button className="btn btn-primary">Learn More !</button>
+						</Link>
+						<Like name={name} />
+					</div>
 				</div>
 			</div>
 		</div>

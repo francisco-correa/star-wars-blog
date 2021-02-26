@@ -28,7 +28,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const response = await fetch("https://swapi.dev/api/people/", settings);
 				const json = await response.json();
 				const data = json;
-				// console.log(data, "<--JSON Characters");
+				console.log(data, "<--JSON Characters");
 
 				setStore({ characters: data.results });
 			},
@@ -43,7 +43,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const response = await fetch("https://swapi.dev/api/planets/", settings);
 				const json = await response.json();
 				const d = json;
-				// console.log(json, "<--JSON Planets");
+				console.log(json, "<--JSON Planets");
 
 				setStore({ planets: d.results });
 			},
@@ -54,15 +54,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 				console.log(store.favorites);
 			},
 
-			// addFavorites: name => {
-			// 	const newStore = getStore();
-			// 	let item = newStore.favorites.find(value => value == name); //
-			// 	if (item != name) {
-			// 		let updatedFavorites = newStore.favorites.concat(name);
-			// 		setStore({ favorites: updatedFavorites });
-			// 	}
-			// },
-
 			removeFavorites: item => {
 				console.log(item);
 				const store = getStore();
@@ -70,16 +61,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ favorites: removeName });
 				console.log(store.favorites);
 			},
-
-			// removeFavorites: fav => {
-			// 	setStore({
-			// 		favorites: getStore().favorites.filter(function(item, index) {
-			// 			if (fav.id !== item.id) {
-			// 				return item;
-			// 			}
-			// 		})
-			// 	});
-			// },
 
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {

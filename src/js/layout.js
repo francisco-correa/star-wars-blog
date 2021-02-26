@@ -9,6 +9,7 @@ import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { Characters } from "./views/characters";
 import { Planets } from "./views/planets";
+import { Link } from "react-router-dom";
 
 //create your first component
 const Layout = () => {
@@ -41,7 +42,15 @@ const Layout = () => {
 							<Planets data={store.planets} />
 						</Route>
 						<Route>
-							<h1>Sorry we dont find your favorite characters or star wars planets</h1>
+							<h1>
+								Sorry we dont find your favorites characters or star wars planets
+								<br />
+								<Link to="/">
+									<span className="btn btn-primary btn-lg" href="#" role="button">
+										Back to Star Wars Home
+									</span>
+								</Link>
+							</h1>
 						</Route>
 					</Switch>
 					<Footer />

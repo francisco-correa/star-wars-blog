@@ -8,17 +8,31 @@ export const Characters = () => {
 	const [data, setData] = useState(null);
 	const { id } = useParams();
 
-	useEffect(
-		async () => {
-			const response = await fetch(`https://swapi.dev/api/people/${id}/`);
-			const json = await response.json();
-			const data = json;
-			console.log(data, "<--JSON Characters");
+	// useEffect(
+	// 	async () => {
+	// 		const response = await fetch(`https://swapi.dev/api/people/${id}/`);
+	// 		const json = await response.json();
+	// 		const data = json;
+	// 		console.log(data, "<--JSON Characters");
 
-			setData(data);
-		},
-		[id]
-	);
+	// 		setData(data);
+	// 	},
+	// 	[id]
+	// );
+
+	useEffect(() => {
+		async function fetchData() {
+			try {
+				const response = await fetch(`https://swapi.dev/api/people/${id}/`);
+				const json = await response.json();
+				const data = json;
+				setData(data);
+			} catch (e) {
+				console.error(e);
+			}
+		}
+		fetchData();
+	}, []);
 
 	if (!data) return null;
 	return (

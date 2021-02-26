@@ -23,6 +23,7 @@ export const Home = () => {
 				Planets
 			</h2>
 			<ListPlanets />
+			<div />
 		</div>
 	);
 };
