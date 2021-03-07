@@ -1,3 +1,8 @@
+# Link to Francisco´s Star Wars Blog
+https://drive.google.com/file/d/1ZAu0giVv5chOaCHlnI1xbemntns8urIh/view?usp=sharing
+
+
+
 # WebApp boilerplate with React JS
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io#https://github.com/4GeeksAcademy/react-hello-webapp.git)
 
