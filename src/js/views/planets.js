@@ -31,7 +31,7 @@ export const Planets = () => {
 				<div className="col-6">
 					<div>
 						<img
-							src="https://static.wikia.nocookie.net/esstarwars/images/e/e6/MosEisley-celebration.png/revision/latest?cb=20140805192904"
+							src="https://static.wikia.nocookie.net/esstarwars/images/f/fd/Mos_Eisley.png/revision/latest?cb=20180317225921"
 							className="card-img-top"
 							alt="Tattoine"
 						/>

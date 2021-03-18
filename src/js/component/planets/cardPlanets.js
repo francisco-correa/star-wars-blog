@@ -20,7 +20,7 @@ const CardPlanets = ({ url, name, diameter, climate, terrain }) => {
 			<div className="card-group">
 				<div className="card bg-light border-light mb-3">
 					<img
-						src="https://static.wikia.nocookie.net/esstarwars/images/e/e6/MosEisley-celebration.png/revision/latest?cb=20140805192904"
+						src="https://static.wikia.nocookie.net/esstarwars/images/f/fd/Mos_Eisley.png/revision/latest?cb=20180317225921"
 						className="card-img-top"
 						style={{ height: "130px" }}
 						alt="Tattoine"

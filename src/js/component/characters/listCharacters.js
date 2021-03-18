@@ -6,7 +6,7 @@ const ListCharacters = () => {
 	const { store } = useContext(Context);
 	return (
 		<div className="container">
-			<div className="row">
+			<div className="row flex-row flex-nowrap overflow-auto">
 				{store.characters.map((item, index) => {
 					return <CardCharacters key={index} {...item} />;
 				})}
